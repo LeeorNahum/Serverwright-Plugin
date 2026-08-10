@@ -27,19 +27,24 @@ One consequence is worth knowing before you install: Agent Plugins 1.0.0 makes a
 
 The tools that arrive are not read-only. Alongside listing servers and reading files, they write, edit, move, delete, upload, run console and shell commands, and send power signals, exactly the access you hold in the Serverwright dashboard, gated per server by what that server's connection supports. Every call is recorded to the workspace audit trail.
 
-## Where it works today
+## Where it works
 
-Two server generations matter here, and this README says which is live. **The production server at `mcp.serverwright.io` currently runs the legacy generation**, which speaks the MCP protocol revisions today's coding agents ship (through `2025-11-25`, with the `initialize` handshake). A rewrite that serves protocol revision `2026-07-28` and only that revision is built and pending release; when it deploys, the matrix below flips from the "Live server" column to the "After the pending release" column, with no change to this plugin.
+The server at `mcp.serverwright.io` is one of two generations, and your own client tells you which one it reached, so this section stays true whichever is serving:
 
-| Client | Revision it sends | Live server (legacy, today) | After the pending release (`2026-07-28` only) |
+- **Legacy generation.** Speaks the MCP protocol revisions through `2025-11-25`, with the `initialize` handshake. If your client signs in and then connects and lists tools while sending a pre-`2026-07-28` revision, this is the generation you are on.
+- **`2026-07-28`-only generation.** Serves protocol revision `2026-07-28` and nothing older: stateless, no `initialize` handshake. If your client signs in and is then answered with the unsupported-protocol-version error (`-32022`) naming `2026-07-28`, this is the generation you are on and your client has not shipped that revision yet.
+
+Neither outcome changes this plugin: the manifests point at the endpoint, and the endpoint's generation decides the rest.
+
+| Client | Revision it sends | Against the legacy generation | Against the `2026-07-28`-only generation |
 | --- | --- | --- | --- |
 | Claude Code 2.1.226 | `2025-11-25` | **Works** | Signs in, then refused with `-32022` until it ships `2026-07-28` |
 | Cursor 3.15.6 | `2025-11-25` | **Works** | Signs in, then refused with `-32022` |
 | Codex CLI 0.147.0 | `2025-06-18` | **Works** | Signs in, then refused with `-32022` |
 | VS Code 1.132.0 | `2025-11-25` | **Works** (plugin MCP servers start when the Chat view opens) | Cannot connect; `2026-07-28` is absent from its build |
-| ChatGPT (web, desktop, mobile) | `2026-07-28` | Not yet: the live server predates both the revision ChatGPT speaks and the sign-in surface it requires | **Works fully** |
+| ChatGPT (web, desktop, mobile) | `2026-07-28` | Does not connect: the legacy generation predates both the revision ChatGPT speaks and the sign-in surface it requires | **Works fully** |
 
-Revisions were measured on 2026-08-09 by logging what each client actually puts on the wire. A "refused" entry means the client completes OAuth and is then answered with the unsupported-protocol-version error naming `2026-07-28` as the one revision served. That is the client's own MCP implementation lagging the protocol, not a misconfiguration here; each of those clients connects again, without any change to this plugin, once it ships the current revision.
+Revisions were measured on 2026-08-09 by logging what each client actually puts on the wire. A "refused" entry means the client completes OAuth and is then answered with the unsupported-protocol-version error naming `2026-07-28` as the one revision served. That is the client's own MCP implementation lagging the protocol, not a misconfiguration here; each of those clients connects, without any change to this plugin, once it ships the current revision.
 
 If you use Claude in the browser or the desktop app, there is no plugin install path there at all. Add Serverwright as a connector instead.
 
