@@ -1,0 +1,24 @@
+{
+  "name": "serverwright",
+  "description": "The Serverwright plugin: connects Claude Code to the servers in your Serverwright workspace over MCP.",
+  "owner": {
+    "name": "Leeor Nahum",
+    "url": "https://github.com/LeeorNahum"
+  },
+  "plugins": [
+    {
+      "name": "serverwright",
+      "source": "./",
+      "description": "Connects this agent to the servers in your Serverwright workspace: one audited MCP surface for files, search, console, power, and shell.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Leeor Nahum",
+        "url": "https://github.com/LeeorNahum"
+      },
+      "homepage": "https://serverwright.io",
+      "repository": "https://github.com/LeeorNahum/Serverwright-Plugin",
+      "license": "MIT",
+      "keywords": ["servers", "ssh", "sftp", "mcp", "serverwright"]
+    }
+  ]
+}
