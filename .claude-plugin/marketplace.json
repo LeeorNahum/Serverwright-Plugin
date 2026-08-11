@@ -17,8 +17,13 @@
       },
       "homepage": "https://serverwright.io",
       "repository": "https://github.com/LeeorNahum/Serverwright-Plugin",
-      "license": "MIT",
-      "keywords": ["servers", "ssh", "sftp", "mcp", "serverwright"]
+      "keywords": [
+        "servers",
+        "ssh",
+        "sftp",
+        "mcp",
+        "serverwright"
+      ]
     }
   ]
 }
