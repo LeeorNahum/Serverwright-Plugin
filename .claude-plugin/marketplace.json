@@ -10,7 +10,7 @@
       "name": "serverwright",
       "source": "./",
       "description": "Connects this agent to the servers in your Serverwright workspace: one audited MCP surface for files, search, console, power, and shell.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "author": {
         "name": "Leeor Nahum",
         "url": "https://github.com/LeeorNahum"

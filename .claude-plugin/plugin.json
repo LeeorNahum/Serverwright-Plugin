@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "serverwright",
   "displayName": "Serverwright",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Connects this agent to the servers in your Serverwright workspace: one audited MCP surface for files, search, console, power, and shell.",
   "author": {
     "name": "Leeor Nahum",

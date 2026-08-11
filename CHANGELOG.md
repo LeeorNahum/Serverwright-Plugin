@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.1 (2026-08-10)
+
+- The README states the live server generation plainly: `2026-07-28` only, with the measured client matrix. The two-generation framing existed for the cutover window, which has passed.
+- License file and manifest fields removed.
+
 ## 1.0.0 (2026-08-10)
 
 Initial release.

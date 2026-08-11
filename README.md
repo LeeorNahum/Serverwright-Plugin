@@ -1,5 +1,7 @@
 # Serverwright plugin
 
+[![GitHub Release](https://img.shields.io/github/v/release/LeeorNahum/Serverwright-Plugin?sort=semver)](https://github.com/LeeorNahum/Serverwright-Plugin/releases/latest)
+
 Points an agent at [Serverwright](https://serverwright.io), remote hands for the servers you
 own: one MCP server at `https://mcp.serverwright.io/mcp`, declared in both the
 [Agent Plugins 1.0.0](https://agent-plugins.org) format (`plugin.json`, `mcp.json`) and
