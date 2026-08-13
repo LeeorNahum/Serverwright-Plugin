@@ -2,7 +2,7 @@
 
 ## 1.0.2 (2026-08-13)
 
-- Apache-2.0: the verbatim `LICENSE` text, a `license` field in `plugin.json`, `.claude-plugin/plugin.json`, and `.claude-plugin/marketplace.json`, and one README line. No behavior change; the endpoint and the tools are the same.
+- Apache-2.0: the verbatim `LICENSE` text, a `license` field in `plugin.json`, `.claude-plugin/plugin.json`, and `.claude-plugin/marketplace.json`, and one README line. No behavior change: the endpoint and the tools are the same.
 
 ## 1.0.1 (2026-08-10)
 
