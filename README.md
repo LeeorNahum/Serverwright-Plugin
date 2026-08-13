@@ -52,3 +52,5 @@ VS Code: clone anywhere, then add the directory to `chat.pluginLocations` in use
 
 A test in the Serverwright repository asserts both manifests equal the endpoint the
 deployment advertises, so they cannot silently diverge.
+
+Licensed under the [Apache License 2.0](LICENSE).
